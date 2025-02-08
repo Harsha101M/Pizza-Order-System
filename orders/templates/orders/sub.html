@@ -1,0 +1,37 @@
+{% extends 'orders/header.html' %} {% block content %}
+
+
+
+<div class="container">
+    <div class="content my-4 px-4">
+        <div class="card rounded-0 shadow">
+            <div class="card-body">
+                <h4 style="margin:10px; text-align:center;"> Choose a Combo</h4>
+                <div class="row justify-content-center">
+
+                    <table class="table table-striped table-hover" style="border: 2px solid black">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Combo</th>
+                                <th scope="col">On its own</th>
+                                <th scope="col">Meal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dish in dishes %}
+                            <tr>
+                                <th>{{dish.sub_filling}}</th>
+                                <td><button type="button" class="btn btn-info" onclick="add_to_cart({item_description:'Small Sub - {{dish.sub_filling}}' , price:{{dish.small_price}}})"><strong>Rs {{dish.small_price}}</strong></button></td>
+                                <td><button type="button" class="btn btn-success" onclick="add_to_cart({item_description:'Large Sub - {{dish.sub_filling}}' , price:{{dish.large_price}}})"><strong>Rs {{dish.large_price}}</strong></button></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

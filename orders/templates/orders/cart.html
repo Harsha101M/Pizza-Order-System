@@ -1,0 +1,33 @@
+{% extends 'orders/header.html' %} {% block content %}
+
+<div class="container-fluid">
+    <div class="content my-3 px-2">
+        <div class="card rounded-0 shadow">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <table class="table table-bordered table-striped" id="card-tbl">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="text-center">#</th>
+                                <th scope="col" class="text-center">Item Description</th>
+                                <th scope="col" class="text-center">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart_body">
+                        </tbody>
+                    </table>
+
+
+                    
+                </div>
+                <h2>Total: <span class="badge badge-light border px-5 rounded-pill float-right" id="total"></span></h2>
+                <div class="row justify-content-center">
+                    <button id="checkout_button" type="button" class="btn btn-primary float-right btn-lg rounded-pill" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
